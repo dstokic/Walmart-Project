@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Tourney:wght@300&family=Vollkorn&display=swap');
+@import "compass/css3";
+
+*{
+  font-family: 'Vollkorn', serif;
+  --wal-darkBlue: #003087; 
+  --wal-mediumBlue: #0072ce;
+  --wal-lightBlue: #6cace4;
+  --wal-yellow: #ffc220;
+}
+
+body{
+  background-color: whitesmoke;
+}
+
+.panel{
+  position: relative;
+  text-align: center;
+  right: 1vw;
+}
+
+.panel img{
+  width: 101vw;
+  height: auto;
+}
+
+
+.rolling-panel{
+  max-width: 1000px;
+  position: relative;
+}
+
+.emphasis{
+  font-family: Tourney, sans-serif;
+}
+
+.panel{
+  display: none;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+
+
+
+
+/* Explanation section of the website */
+.explanation{
+  background-color: var(--wal-mediumBlue);
+  color: white;
+  padding: 10px 30px;
+  margin-top: 15vh;
+  font-size: 1.75vw;
+  border-radius: 8px;
+}
+
+.explanation .descrip{
+  opacity: 0%;
+}
+
+/* Try doing this fade-in in JavaScript instead, make it permanent */
+.explanation .descrip:hover{
+  animation-duration: 4s;
+  animation-name: fadein;
+}
+
+@keyframes fadein{
+  to{
+    opacity: 100%;
+  }
+}
+
+
+/* Creates the slide in effect with the in-store and online boxes */
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s;
+}
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+.mod {
+  width: 48%;
+  min-height: 200px;
+  background: white;
+  position: relative;
+  float: left;
+  padding: 20px;
+  margin-right: 4%;
+  margin-bottom: 4%;
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+  box-shadow: 0 1px 3px rgba(black, 0.2);
+}
+
+
+
+/* Online and In-Store use cases section of the website */
+.floating-boxes{
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-boxes h1{
+  font-family: 'Tourney', cursive;
+}
+
+.online{
+  background-color: var(--wal-yellow);
+  color: black;
+  padding: 10px 30px;
+  width: 70vw;
+  margin-top: 27vh;
+  margin-bottom: 6vh;
+  margin-left: 3.5vw;
+  border-radius: 10px;
+  align-self: flex-start;
+  font-size: 1.75vw;
+}
+
+.in-store{
+  background-color: var(--wal-mediumBlue);
+  color: white;
+  padding: 10px 30px;
+  width: 70vw;
+  margin-top: 6vh;
+  margin-right: 3.5vw;
+  border-radius: 10px;
+  align-self: flex-end;
+  font-size: 1.75vw;
+}
+
+.ar-img{
+  object-fit: fill;
+  width: 70vw;
+  height: 65vh;
+  margin-bottom: 10px;
+}
+
+.inBoxImg{
+  border: 2px solid white;
+}
+
+.outBoxImg{
+  border: 2px solid black;
+}
+
+
+/* Very end of the website */
+.question{
+  background-color: var(--wal-darkBlue);
+  color: var(--wal-yellow);
+  text-align: center;
+  height: 85vh;
+  padding: 10px 30px;
+  margin-top: 15vh;
+  font-size: 5vh;
+}
+
+.question img{
+  height: 40vh;
+}
